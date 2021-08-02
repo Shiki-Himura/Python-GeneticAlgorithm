@@ -46,7 +46,7 @@ def create_fitness_list():
 
 
 #def crossover_selection():
-
+# Implement mutation method. Implement selection method for child strings
 
 
 create_parents()
