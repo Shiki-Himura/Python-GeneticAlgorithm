@@ -4,7 +4,6 @@ from random import choice
 target = 'Sein oder nicht sein'
 pool_lowercase = 'abcdefghijklmnopqrstuvwxyz '
 pool_uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ '
-pool_combined = 'abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 parent_strings = []
 child_strings = []
 population_size = 2000
