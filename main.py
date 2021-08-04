@@ -3,7 +3,8 @@ from random import choice
 from sys import exit
 
 target = 'Sein oder nicht sein'
-gene_pool = 'aAbBcCdDeEfFgGhHiIjJkK lLmMnNoOpPqQrRsStTuUvVwWxXyYzZ'
+#target = 'hello'
+gene_pool = ' aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ'
 parent_strings = []
 child_strings = []
 population_size = 2000
@@ -64,27 +65,21 @@ def create_dna_list():
 def crossover_selection():
     global parent_strings, child_strings, matchFound
     temp_list = create_dna_list()
-    for i in range(1000):
+    for i in range(2000):
         rnd_string_one = choice(temp_list)
         rnd_string_two = choice(temp_list)
+
         temp_one = rnd_string_one[:10]
         temp_one += rnd_string_two[10:]
-        temp_two = rnd_string_one[10:]
-        temp_two += rnd_string_two[:10]
+
         string_one = mutate(temp_one)
-        string_two = mutate(temp_two)
 
         if string_one == target:
             print(string_one)
             matchFound = True
             exit()
-        elif string_two == target:
-            print(string_two)
-            matchFound = True
-            exit()
 
         child_strings.append(string_one)
-        child_strings.append(string_two)
 
     parent_strings = []
     parent_strings = child_strings
@@ -100,7 +95,6 @@ while not matchFound:
     gen += 1
     print(best_match, gen)
 
-print(parent_strings)
 
 
 
