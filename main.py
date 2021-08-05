@@ -85,7 +85,6 @@ def crossover_selection():
     parent_strings = child_strings
     child_strings = []
 
-
 #create starting point
 create_parents()
 gen = 0
