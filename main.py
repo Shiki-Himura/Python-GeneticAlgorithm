@@ -2,6 +2,8 @@ import random
 from random import choice
 from sys import exit
 
+# refactor program with classes
+
 target = 'Sein oder nicht sein'
 #target = 'hello'
 gene_pool = ' aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ'
