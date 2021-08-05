@@ -11,6 +11,7 @@ population_size = 2000
 mut_rate = 1
 matchFound = False
 best_match = None
+gen = 0
 
 
 def initialize_parents():
