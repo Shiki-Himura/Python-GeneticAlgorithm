@@ -23,7 +23,7 @@ def initialize_parents():
     parent_strings.append(temp_str)
 
 
-# get 2000 randomly generated strings
+# generate random strings based on population_size
 def create_parents():
     for i in range(population_size):
         initialize_parents()
@@ -42,7 +42,7 @@ def mutate(string):
     return temp_string
 
 
-# get list of strings based on matching characters with target
+# get list of strings based on matching characters of target and string
 def create_dna_list():
     global best_match
     temp_array = []
@@ -63,7 +63,7 @@ def create_dna_list():
     return temp_array
 
 
-# Get strings and put 1/2 from each together
+# get strings and put 1/2 from each together
 def crossover_selection():
     global parent_strings, child_strings, matchFound
     temp_list = create_dna_list()
@@ -87,9 +87,10 @@ def crossover_selection():
     parent_strings = child_strings
     child_strings = []
 
-#create starting point
+#create starting population values
 create_parents()
 gen = 0
+
 #condition when to end the program
 while not matchFound:
     crossover_selection()
