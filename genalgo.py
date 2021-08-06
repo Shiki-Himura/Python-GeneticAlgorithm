@@ -3,7 +3,7 @@ from random import choice
 from sys import exit
 
 
-class Evolution:
+class Generation:
     def __init__(self):
         self.parent_strings = []
         self.child_strings = []
@@ -19,8 +19,7 @@ class Evolution:
         temp_str = ""
         for j in range(len(self.target)):
             temp_str += choice(self.gene_pool)
-
-        parent_strings.append(temp_str)
+        self.parent_strings.append(temp_str)
 
     # generate random strings based on population_size
     def create_parents(self):
@@ -45,17 +44,13 @@ class Evolution:
         for i in range(2000):
             rnd_string_one = choice(temp_list)
             rnd_string_two = choice(temp_list)
-
             temp_one = rnd_string_one[:10]
             temp_one += rnd_string_two[10:]
-
             string_one = self.mutate(temp_one)
-
             if string_one == self.target:
                 print(string_one)
                 self.matchFound = True
                 exit()
-
             self.child_strings.append(string_one)
 
         self.parent_strings = []
@@ -64,11 +59,9 @@ class Evolution:
 
     # get list of strings based on matching characters of target and string
     def create_dna_list(self):
-        global best_match
         temp_array = []
         best_counter = 0
-
-        for string in parent_strings:
+        for string in self.parent_strings:
             counter = 0
             for i in range(len(string)):
                 if string[i] == self.target[i]:
@@ -78,14 +71,10 @@ class Evolution:
 
             if counter > best_counter:
                 best_counter = counter
-                best_match = string
-
+                self.best_match = string
         return temp_array
 
 
-#target = 'hello'
-parent_strings = []
-child_strings = []
 
 
 

@@ -1,15 +1,11 @@
 import genalgo
 
-# refactor program with classes
-
-#create starting population values
-create_parents()
-
-#condition when to end the program
-while not matchFound:
-    crossover_selection()
-    gen += 1
-    print(best_match, gen)
+Evo = genalgo.Generation()
+Evo.create_parents()  # create starting population values
+while not Evo.matchFound:  # condition when to end the program
+    Evo.crossover_selection()
+    Evo.gen += 1
+    print(Evo.best_match, Evo.gen)
 
 
 
